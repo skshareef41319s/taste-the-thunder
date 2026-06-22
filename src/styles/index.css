@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg: #03050a;
+  --panel: rgba(7, 12, 20, 0.62);
+  --panel-strong: rgba(10, 16, 27, 0.88);
+  --line: rgba(165, 201, 255, 0.16);
+  --glow: rgba(84, 151, 255, 0.5);
+  --text: rgba(245, 249, 255, 0.96);
+  --muted: rgba(205, 215, 230, 0.74);
+}
+
+html {
+  scroll-behavior: auto;
+  background: var(--bg);
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top, rgba(31, 82, 181, 0.18), transparent 38%),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(108, 170, 255, 0.11),
+      transparent 30%
+    ),
+    linear-gradient(180deg, #04070d 0%, #020409 100%);
+  color: var(--text);
+  font-family:
+    "Sora",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at center, transparent 62%, rgba(0, 0, 0, 0.34));
+  background-size:
+    100% 3px,
+    3px 100%,
+    100% 100%;
+  mix-blend-mode: soft-light;
+  opacity: 0.28;
+  z-index: 1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 30%,
+    transparent 0%,
+    rgba(3, 5, 10, 0.18) 52%,
+    rgba(3, 5, 10, 0.78) 100%
+  );
+  z-index: 2;
+}
+
+#root {
+  position: relative;
+  z-index: 3;
+  isolation: isolate;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(84, 151, 255, 0.35);
+  color: white;
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_20px_80px_rgba(0,0,0,0.35)];
+  }
+
+  .headline-display {
+    font-family:
+      "Bebas Neue", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    letter-spacing: 0.1em;
+  }
+
+  .fine-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow:
+      0 0 24px rgba(117, 176, 255, 0.48),
+      0 0 56px rgba(58, 128, 255, 0.2);
+  }
+
+  .mask-fade-top {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
+  .will-change-transform {
+    will-change: transform, opacity, filter;
+  }
+}
