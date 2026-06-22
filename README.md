@@ -4,7 +4,7 @@ An immersive cinematic storytelling experience inspired by the power, energy, an
 
 This project explores how modern AI tools can be combined to conceptualize, design, generate assets, and develop a complete interactive web experience.
 
-![Banner](./preview.png)
+
 
 ---
 
