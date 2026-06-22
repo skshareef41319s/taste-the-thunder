@@ -109,22 +109,6 @@ This project was created to explore:
 
 ---
 
-## 📸 Screenshots
-
-Add screenshots here.
-
----
-
-## 🔮 Future Improvements
-
-- Audio-driven interactions
-- Advanced particle systems
-- Three.js integrations
-- Interactive product experiences
-- Enhanced cinematic transitions
-
----
-
 ## 👨‍💻 Author
 
 **Shaik Shareef**
